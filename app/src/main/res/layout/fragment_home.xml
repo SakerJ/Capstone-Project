@@ -1,0 +1,41 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ui.fragment.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@color/gray_d4"
+            android:gravity="center"
+            android:text="Banner" />
+
+        <include layout="@layout/layout_home_hot" />
+
+        <com.houlin.capstone_project.view.ui.custom.IntervalView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/interval_height" />
+
+        <include layout="@layout/layout_home_coming" />
+
+        <com.houlin.capstone_project.view.ui.custom.IntervalView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/interval_height" />
+
+        <include layout="@layout/layout_home_us" />
+
+        <com.houlin.capstone_project.view.ui.custom.IntervalView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/interval_height" />
+
+        <include layout="@layout/layout_home_top" />
+
+    </LinearLayout>
+
+</ScrollView>
