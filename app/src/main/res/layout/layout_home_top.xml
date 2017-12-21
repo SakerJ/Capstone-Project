@@ -5,6 +5,7 @@
         android:id="@+id/rl_top"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="?android:attr/selectableItemBackground"
         android:paddingLeft="@dimen/public_padding"
         android:paddingRight="@dimen/public_padding">
 

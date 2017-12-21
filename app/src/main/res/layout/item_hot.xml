@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorPrimaryLight"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/iv_image"
+        android:text="芳华"
+        android:textColor="@color/black_20"
+        android:textSize="18sp" />
+
+    <com.houlin.capstone_project.view.ui.custom.RatingStar
+        android:id="@+id/rs_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/iv_image" />
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/gray_9a"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@id/rs_rating"
+        android:text="9.9"
+        android:textSize="@dimen/text_12" />
+
+    <TextView
+        android:id="@+id/tv_director"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rs_rating"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/iv_image"
+        android:text="@string/director"
+        android:textColor="@color/gray_9a"
+        android:textSize="@dimen/text_12" />
+
+    <TextView
+        android:id="@+id/tv_cast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_director"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@id/iv_image"
+        android:text="@string/cast"
+        android:textColor="@color/gray_9a"
+        android:textSize="@dimen/text_12" />
+
+</RelativeLayout>

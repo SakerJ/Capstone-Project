@@ -1,12 +1,14 @@
 <resources>
     <string name="app_name">漫电影</string>
     <string name="home">首页</string>
-    <string name="recommend">推荐</string>
+    <string name="us">北美</string>
     <string name="hot">热映</string>
     <string name="top250">Top250</string>
     <string name="north_america_rank">北美票房榜</string>
     <string name="more">更多</string>
     <string name="is_hot">正在热映</string>
     <string name="coming_soon">即将上映</string>
+    <string name="director">导演</string>
+    <string name="cast">主演</string>
 
 </resources>

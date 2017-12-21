@@ -34,7 +34,7 @@ public class MainPresenterImpl implements MainPresenter {
             case R.id.rb_home:
                 transaction.replace(R.id.fl_container, new HomeFragment());
                 break;
-            case R.id.rb_recommend:
+            case R.id.rb_us:
                 transaction.replace(R.id.fl_container, new UsFragment());
                 break;
             case R.id.rb_hot:

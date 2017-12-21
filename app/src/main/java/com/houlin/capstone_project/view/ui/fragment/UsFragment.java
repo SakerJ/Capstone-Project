@@ -1,14 +1,14 @@
 package com.houlin.capstone_project.view.ui.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.houlin.capstone_project.BaseFragment;
 import com.houlin.capstone_project.R;
 
-public class UsFragment extends Fragment {
+public class UsFragment extends BaseFragment {
 
     public UsFragment() {
         // Required empty public constructor

@@ -11,8 +11,7 @@
     <color name="gray_d4">#d4d4d4</color>
     <color name="gray_9a">#9a9a9a</color>
     <color name="gray_5c">#5c5c5c</color>
-
     <color name="black_20">#202020</color>
-
     <color name="item_text">#f8ae30</color>
+    <color name="divider">#f4f4f4</color>
 </resources>

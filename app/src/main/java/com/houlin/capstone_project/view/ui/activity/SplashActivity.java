@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.houlin.capstone_project.MyApplication;
 import com.houlin.capstone_project.R;
-import com.houlin.capstone_project.utils.HandlerUtil;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
         // TODO: 2017/12/7 全屏
         setContentView(R.layout.activity_splash);
 
-        HandlerUtil.handler.postDelayed(new StartRunnable(), DELAY_MILLIS);
+        MyApplication.getHandler().postDelayed(new StartRunnable(), DELAY_MILLIS);
     }
 
     private class StartRunnable implements Runnable {

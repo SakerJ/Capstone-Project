@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.houlin.capstone_project.R;
 import com.houlin.capstone_project.model.bean.InTheaters;
+import com.houlin.capstone_project.view.ui.custom.RatingStar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,26 +20,26 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by houlin on 2017/12/7.
+ * @author houlin
  */
 
 public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder> {
 
-    private final List<InTheaters.SubjectsBean> mList = new ArrayList<>();
-    private final Fragment mFragment;
-
-    public List<InTheaters.SubjectsBean> getList() {
-        return mList;
-    }
+    private List<InTheaters.SubjectsBean> mList = new ArrayList<>();
+    private Fragment mFragment;
 
     public HotAdapter(Fragment fragment) {
         mFragment = fragment;
     }
 
+    public List<InTheaters.SubjectsBean> getList() {
+        return mList;
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View inflate = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_home_hot, parent, false);
+                .inflate(R.layout.item_hot, parent, false);
         return new ViewHolder(inflate);
     }
 
@@ -52,14 +53,20 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder> {
         return mList.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.iv_image)
         ImageView mImageView;
-        @BindView(R.id.tv_text)
-        TextView mTextView;
         @BindView(R.id.tv_title)
         TextView mTvTitle;
+        @BindView(R.id.rs_rating)
+        RatingStar mRsRating;
+        @BindView(R.id.tv_rating)
+        TextView mTvRating;
+        @BindView(R.id.tv_director)
+        TextView mTvDirector;
+        @BindView(R.id.tv_cast)
+        TextView mTvCast;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -67,11 +74,32 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder> {
         }
 
         void update(int position) {
-            InTheaters.SubjectsBean bean = mList.get(position);
-            Glide.with(mFragment).load(bean.getImages().getSmall())
+            InTheaters.SubjectsBean subjectsBean = mList.get(position);
+            Glide.with(mFragment).load(subjectsBean.getImages().getSmall())
                     .placeholder(R.drawable.place_holder).dontAnimate().into(mImageView);
-            mTextView.setText(bean.getCollect_count() + "人看过");
-            mTvTitle.setText(bean.getTitle());
+            mTvTitle.setText(subjectsBean.getTitle());
+            mRsRating.setRating((float) subjectsBean.getRating().getAverage());
+            mTvRating.setText(subjectsBean.getRating().getAverage() + "分");
+
+            StringBuilder director = new StringBuilder("导演：");
+            for (int i = 0; i < subjectsBean.getDirectors().size(); i++) {
+                InTheaters.SubjectsBean.DirectorsBean bean = subjectsBean.getDirectors().get(i);
+                if (i != 0) {
+                    director.append(" / ");
+                }
+                director.append(bean.getName());
+            }
+            mTvDirector.setText(director);
+
+            StringBuilder cast = new StringBuilder("主演：");
+            for (int i = 0; i < subjectsBean.getCasts().size(); i++) {
+                InTheaters.SubjectsBean.CastsBean bean = subjectsBean.getCasts().get(i);
+                if (i != 0) {
+                    cast.append(" / ");
+                }
+                cast.append(bean.getName());
+            }
+            mTvCast.setText(cast);
         }
     }
 }

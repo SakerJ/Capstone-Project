@@ -1,7 +1,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     tools:context=".view.ui.fragment.HomeFragment">
 
     <LinearLayout
@@ -9,28 +11,35 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:background="@color/gray_d4"
-            android:gravity="center"
-            android:text="Banner" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/home_banner_2" />
+
+        <!--<com.google.android.gms.ads.AdView-->
+        <!--android:id="@+id/ad_home"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--ads:adSize="LARGE_BANNER"-->
+        <!--ads:adUnitId="ca-app-pub-6273206636756153/9705074251" />-->
 
         <include layout="@layout/layout_home_hot" />
 
-        <com.houlin.capstone_project.view.ui.custom.IntervalView
+        <com.houlin.capstone_project.view.ui.custom.DividerView
             android:layout_width="match_parent"
             android:layout_height="@dimen/interval_height" />
 
         <include layout="@layout/layout_home_coming" />
 
-        <com.houlin.capstone_project.view.ui.custom.IntervalView
+        <com.houlin.capstone_project.view.ui.custom.DividerView
             android:layout_width="match_parent"
             android:layout_height="@dimen/interval_height" />
 
         <include layout="@layout/layout_home_us" />
 
-        <com.houlin.capstone_project.view.ui.custom.IntervalView
+        <com.houlin.capstone_project.view.ui.custom.DividerView
             android:layout_width="match_parent"
             android:layout_height="@dimen/interval_height" />
 

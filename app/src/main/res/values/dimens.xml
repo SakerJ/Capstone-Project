@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="text_10">10sp</dimen>
     <dimen name="text_12">12sp</dimen>
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="text_14">14sp</dimen>
     <!--左右的padding-->
     <dimen name="public_padding">12dp</dimen>
     <dimen name="arrow_margin">6dp</dimen>
-    <dimen name="text_16">16sp</dimen>
     <dimen name="interval_height">10dp</dimen>
     <dimen name="item_title_margin">5dp</dimen>
+    <dimen name="recycler_margin">20dp</dimen>
 </resources>

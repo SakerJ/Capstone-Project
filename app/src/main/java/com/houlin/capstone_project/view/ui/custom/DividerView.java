@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.houlin.capstone_project.R;
 import com.houlin.capstone_project.utils.ScreenUtils;
 
 /**
@@ -15,17 +16,17 @@ import com.houlin.capstone_project.utils.ScreenUtils;
  * Created by houlin on 2017/12/5.
  */
 
-public class IntervalView extends View {
+public class DividerView extends View {
 
-    public IntervalView(Context context) {
+    public DividerView(Context context) {
         super(context);
     }
 
-    public IntervalView(Context context, @Nullable AttributeSet attrs) {
+    public DividerView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public IntervalView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public DividerView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -48,7 +49,7 @@ public class IntervalView extends View {
         canvas.drawLine(0, getHeight() - line / 2, getWidth(), getHeight() - line / 2, mPaint);
 
         // 填充剩余空间
-        mPaint.setColor(Color.rgb(244, 244, 244));
+        mPaint.setColor(getResources().getColor(R.color.divider));
         canvas.drawRect(0, line, getWidth(), getHeight() - line, mPaint);
     }
 }

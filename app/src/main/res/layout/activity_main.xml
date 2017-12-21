@@ -31,16 +31,16 @@
             android:text="@string/home" />
 
         <RadioButton
-            android:id="@+id/rb_recommend"
-            style="@style/tab"
-            android:drawableTop="@drawable/tab_recommend_selector"
-            android:text="@string/recommend" />
-
-        <RadioButton
             android:id="@+id/rb_hot"
             style="@style/tab"
             android:drawableTop="@drawable/tab_hot_selector"
             android:text="@string/hot" />
+
+        <RadioButton
+            android:id="@+id/rb_us"
+            style="@style/tab"
+            android:drawableTop="@drawable/tab_recommend_selector"
+            android:text="@string/us" />
 
         <RadioButton
             android:id="@+id/rb_top250"

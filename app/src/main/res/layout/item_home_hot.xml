@@ -23,15 +23,13 @@
             android:layout_gravity="bottom"
             android:background="@drawable/item_hot_bg" />
 
-        <TextView
-            android:id="@+id/tv_text"
+        <ViewStub
+            android:id="@+id/vs_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"
             android:layout_margin="5dp"
-            android:textColor="@color/item_text"
-            android:textSize="@dimen/text_size_10" />
+            android:layout="@layout/inflate_home_hot" />
 
     </android.support.v7.widget.CardView>
 

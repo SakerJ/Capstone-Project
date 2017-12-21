@@ -1,5 +1,6 @@
 package com.houlin.capstone_project.presenter.implement;
 
+import com.houlin.capstone_project.BaseView;
 import com.houlin.capstone_project.listener.ComingListener;
 import com.houlin.capstone_project.listener.HotListener;
 import com.houlin.capstone_project.listener.Top250Listener;
@@ -26,8 +27,8 @@ public class HomePresenterImpl implements HomePresenter, HotListener, ComingList
     }
 
     @Override
-    public void attach(HomeView homeView) {
-        mHomeView = homeView;
+    public void attach(BaseView view) {
+        mHomeView = (HomeView) view;
     }
 
     @Override
