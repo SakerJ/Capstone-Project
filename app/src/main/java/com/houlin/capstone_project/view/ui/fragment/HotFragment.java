@@ -45,41 +45,30 @@ public class HotFragment extends BaseFragment implements HotView {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
+        init();
+        mHotPresenter = new HotPresenterImpl();
+        mHotPresenter.attach(this);
+    }
 
+    private void init() {
         mRecyclerView = mMyRecyclerView.getRecyclerView();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),
                 LinearLayoutManager.VERTICAL, false));
         mRecyclerView.addItemDecoration(new RecyclerUtils.DividerItemDecoration());
         mHotAdapter = new HotAdapter(this);
         mRecyclerView.setAdapter(mHotAdapter);
-
-        mHotPresenter = new HotPresenterImpl();
-        mHotPresenter.attach(this);
-        mHotPresenter.getData();
-
         mMyRecyclerView.setRefreshListener(new MyRecyclerView.RefreshListener() {
             @Override
             public void onRefresh() {
                 mHotPresenter.getData();
             }
         });
-//        mMyRecyclerView.setRefreshListener(new MyRecyclerView.RefreshListener() {
-//            @Override
-//            public void onRefresh() {
-//                new Thread() {
-//                    @Override
-//                    public void run() {
-//                        try {
-//                            Thread.sleep(1000);
-//                        } catch (InterruptedException e) {
-//                            e.printStackTrace();
-//                        }
-//                        mMyRecyclerView.refreshComplete();
-//                    }
-//                }.start();
-//            }
-//        });
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mHotPresenter.getData();
     }
 
     @Override

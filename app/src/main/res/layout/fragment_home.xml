@@ -1,50 +1,67 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
+<com.houlin.capstone_project.view.ui.custom.LoadingFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loading"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="none"
     tools:context=".view.ui.fragment.HomeFragment">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:background="@color/gray_d4"
-            android:scaleType="centerCrop"
-            android:src="@drawable/home_banner_2" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <!--<com.google.android.gms.ads.AdView-->
-        <!--android:id="@+id/ad_home"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--ads:adSize="LARGE_BANNER"-->
-        <!--ads:adUnitId="ca-app-pub-6273206636756153/9705074251" />-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
 
-        <include layout="@layout/layout_home_hot" />
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
-        <com.houlin.capstone_project.view.ui.custom.DividerView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/interval_height" />
+                <LinearLayout
+                    android:id="@+id/ll_banner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:orientation="horizontal" />
 
-        <include layout="@layout/layout_home_coming" />
+            </FrameLayout>
 
-        <com.houlin.capstone_project.view.ui.custom.DividerView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/interval_height" />
+            <!--<com.google.android.gms.ads.AdView-->
+            <!--android:id="@+id/ad_home"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--ads:adSize="LARGE_BANNER"-->
+            <!--ads:adUnitId="ca-app-pub-6273206636756153/9705074251" />-->
 
-        <include layout="@layout/layout_home_us" />
+            <include layout="@layout/layout_home_hot" />
 
-        <com.houlin.capstone_project.view.ui.custom.DividerView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/interval_height" />
+            <com.houlin.capstone_project.view.ui.custom.DividerView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/interval_height" />
 
-        <include layout="@layout/layout_home_top" />
+            <include layout="@layout/layout_home_coming" />
 
-    </LinearLayout>
+            <com.houlin.capstone_project.view.ui.custom.DividerView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/interval_height" />
 
-</ScrollView>
+            <include layout="@layout/layout_home_us" />
+
+            <com.houlin.capstone_project.view.ui.custom.DividerView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/interval_height" />
+
+            <include layout="@layout/layout_home_top" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</com.houlin.capstone_project.view.ui.custom.LoadingFrameLayout>

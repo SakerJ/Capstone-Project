@@ -32,7 +32,7 @@ public class HomeModelImpl implements HomeModel {
 
             @Override
             public void onFailure(Call<InTheaters> call, Throwable t) {
-
+                listener.onFailure();
             }
         });
 
@@ -49,7 +49,7 @@ public class HomeModelImpl implements HomeModel {
 
             @Override
             public void onFailure(Call<InTheaters> call, Throwable t) {
-
+                listener.onComingFailure();
             }
         });
     }
@@ -65,7 +65,7 @@ public class HomeModelImpl implements HomeModel {
 
             @Override
             public void onFailure(Call<UsBox> call, Throwable t) {
-
+                listener.onUsFailure();
             }
         });
     }
@@ -81,7 +81,7 @@ public class HomeModelImpl implements HomeModel {
 
             @Override
             public void onFailure(Call<Top250> call, Throwable t) {
-
+                listener.onTopFailure();
             }
         });
     }
