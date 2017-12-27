@@ -48,6 +48,8 @@ public class HotFragment extends BaseFragment implements HotView {
         init();
         mHotPresenter = new HotPresenterImpl();
         mHotPresenter.attach(this);
+
+        mHotPresenter.getData();
     }
 
     private void init() {
@@ -63,12 +65,6 @@ public class HotFragment extends BaseFragment implements HotView {
                 mHotPresenter.getData();
             }
         });
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        mHotPresenter.getData();
     }
 
     @Override

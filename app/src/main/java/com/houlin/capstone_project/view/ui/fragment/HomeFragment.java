@@ -1,6 +1,7 @@
 package com.houlin.capstone_project.view.ui.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.houlin.capstone_project.BaseFragment;
-import com.houlin.capstone_project.MyApplication;
 import com.houlin.capstone_project.R;
 import com.houlin.capstone_project.adapter.HomeComingAdapter;
 import com.houlin.capstone_project.adapter.HomeHotAdapter;
@@ -84,6 +84,9 @@ public class HomeFragment extends BaseFragment implements HomeView {
         init();
         mPresenter = new HomePresenterImpl();
         mPresenter.attach(this);
+
+        mPresenter.getData();
+        mLoadingFrameLayout.showLoading();
     }
 
     private void init() {
@@ -134,8 +137,13 @@ public class HomeFragment extends BaseFragment implements HomeView {
     @Override
     public void onResume() {
         super.onResume();
-        mPresenter.getData();
-        mLoadingFrameLayout.showLoading();
+        pagerPlay();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mHandler.removeCallbacksAndMessages(null);
     }
 
     @OnClick({R.id.rl_hot, R.id.rl_coming, R.id.rl_us, R.id.rl_top})
@@ -215,7 +223,6 @@ public class HomeFragment extends BaseFragment implements HomeView {
             mLlBanner.addView(dot);
         }
 
-
         mVpBanner.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
@@ -236,15 +243,21 @@ public class HomeFragment extends BaseFragment implements HomeView {
         mVpBanner.setCurrentItem(1000 * mHomePagerAdapter.getList().size(),
                 false);
 
-        // 轮播
-        MyApplication.getHandler().postDelayed(new Runnable() {
+        pagerPlay();
+    }
+
+    private void pagerPlay() {
+        mHandler.removeCallbacksAndMessages(null);
+        mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 mVpBanner.setCurrentItem(mVpBanner.getCurrentItem() + 1);
-                MyApplication.getHandler().postDelayed(this, BANNER_TIME);
+                mHandler.postDelayed(this, BANNER_TIME);
             }
         }, BANNER_TIME);
     }
+
+    private Handler mHandler = new Handler();
 
     @Override
     public void showError() {
