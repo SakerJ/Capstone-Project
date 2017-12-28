@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="180dp">
 
-                <android.support.v4.view.ViewPager
+                <com.houlin.capstone_project.view.ui.custom.PlayViewPager
                     android:id="@+id/vp_banner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />

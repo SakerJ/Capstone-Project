@@ -29,6 +29,7 @@ import com.houlin.capstone_project.utils.ScreenUtils;
 import com.houlin.capstone_project.view.contract.HomeView;
 import com.houlin.capstone_project.view.ui.activity.MainActivity;
 import com.houlin.capstone_project.view.ui.custom.LoadingFrameLayout;
+import com.houlin.capstone_project.view.ui.custom.PlayViewPager;
 
 import java.util.List;
 
@@ -53,7 +54,7 @@ public class HomeFragment extends BaseFragment implements HomeView {
     @BindView(R.id.loading)
     LoadingFrameLayout mLoadingFrameLayout;
     @BindView(R.id.vp_banner)
-    ViewPager mVpBanner;
+    PlayViewPager mVpBanner;
     @BindView(R.id.ll_banner)
     LinearLayout mLlBanner;
 
@@ -132,12 +133,6 @@ public class HomeFragment extends BaseFragment implements HomeView {
     public void onDestroyView() {
         super.onDestroyView();
         mPresenter.detach();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        pagerPlay();
     }
 
     @Override
@@ -243,7 +238,7 @@ public class HomeFragment extends BaseFragment implements HomeView {
         mVpBanner.setCurrentItem(1000 * mHomePagerAdapter.getList().size(),
                 false);
 
-        pagerPlay();
+        mVpBanner.start();
     }
 
     private void pagerPlay() {
