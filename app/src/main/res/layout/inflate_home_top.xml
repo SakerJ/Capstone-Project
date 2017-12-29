@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.houlin.capstone_project.view.ui.custom.RatingStar
+    <com.houlin.capstone_project.ui.custom.RatingStar
         android:id="@+id/rs_rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

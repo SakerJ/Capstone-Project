@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.houlin.capstone_project.R;
-import com.houlin.capstone_project.data.bean.InTheaters;
+import com.houlin.capstone_project.data.bean.Top250;
 import com.houlin.capstone_project.ui.custom.RatingStar;
 
 import java.util.ArrayList;
@@ -23,16 +23,16 @@ import butterknife.ButterKnife;
  * @author houlin
  */
 
-public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder> {
+public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder> {
 
-    private List<InTheaters.SubjectsBean> mList = new ArrayList<>();
+    private List<Top250.SubjectsBean> mList = new ArrayList<>();
     private Fragment mFragment;
 
-    public HotAdapter(Fragment fragment) {
+    public TopAdapter(Fragment fragment) {
         mFragment = fragment;
     }
 
-    public List<InTheaters.SubjectsBean> getList() {
+    public List<Top250.SubjectsBean> getList() {
         return mList;
     }
 
@@ -74,7 +74,7 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder> {
         }
 
         void update(int position) {
-            InTheaters.SubjectsBean subjectsBean = mList.get(position);
+            Top250.SubjectsBean subjectsBean = mList.get(position);
             Glide.with(mFragment).load(subjectsBean.getImages().getSmall())
                     .placeholder(R.drawable.place_holder).dontAnimate().into(mImageView);
             mTvTitle.setText(subjectsBean.getTitle());
@@ -83,7 +83,7 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder> {
 
             StringBuilder director = new StringBuilder("导演：");
             for (int i = 0; i < subjectsBean.getDirectors().size(); i++) {
-                InTheaters.SubjectsBean.DirectorsBean bean = subjectsBean.getDirectors().get(i);
+                Top250.SubjectsBean.DirectorsBean bean = subjectsBean.getDirectors().get(i);
                 if (i != 0) {
                     director.append(" / ");
                 }
@@ -93,7 +93,7 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder> {
 
             StringBuilder cast = new StringBuilder("主演：");
             for (int i = 0; i < subjectsBean.getCasts().size(); i++) {
-                InTheaters.SubjectsBean.CastsBean bean = subjectsBean.getCasts().get(i);
+                Top250.SubjectsBean.CastsBean bean = subjectsBean.getCasts().get(i);
                 if (i != 0) {
                     cast.append(" / ");
                 }

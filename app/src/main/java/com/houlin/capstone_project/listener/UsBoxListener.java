@@ -1,6 +1,6 @@
 package com.houlin.capstone_project.listener;
 
-import com.houlin.capstone_project.model.bean.UsBox;
+import com.houlin.capstone_project.data.bean.UsBox;
 
 /**
  * Created by houlin on 2017/12/9.

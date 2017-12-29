@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.houlin.capstone_project.R;
-import com.houlin.capstone_project.model.bean.Top250;
-import com.houlin.capstone_project.view.ui.custom.RatingStar;
+import com.houlin.capstone_project.data.bean.Top250;
+import com.houlin.capstone_project.ui.custom.RatingStar;
 
 import java.util.ArrayList;
 import java.util.List;

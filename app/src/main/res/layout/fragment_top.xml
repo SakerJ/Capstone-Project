@@ -2,12 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.fragment.HomeFragment">
+    tools:context=".home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.houlin.capstone_project.ui.custom.MyRecyclerView
+        android:id="@+id/rv_show"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="top" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

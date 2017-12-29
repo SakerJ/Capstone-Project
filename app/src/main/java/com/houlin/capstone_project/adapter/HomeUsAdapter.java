@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.houlin.capstone_project.R;
-import com.houlin.capstone_project.model.bean.UsBox;
+import com.houlin.capstone_project.data.bean.UsBox;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
-<com.houlin.capstone_project.view.ui.custom.LoadingFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.houlin.capstone_project.ui.custom.LoadingFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/loading"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.fragment.HomeFragment">
+    tools:context=".home.HomeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="180dp">
 
-                <com.houlin.capstone_project.view.ui.custom.PlayViewPager
+                <com.houlin.capstone_project.ui.custom.PlayViewPager
                     android:id="@+id/vp_banner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -42,19 +42,19 @@
 
             <include layout="@layout/layout_home_hot" />
 
-            <com.houlin.capstone_project.view.ui.custom.DividerView
+            <com.houlin.capstone_project.ui.custom.DividerView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/interval_height" />
 
             <include layout="@layout/layout_home_coming" />
 
-            <com.houlin.capstone_project.view.ui.custom.DividerView
+            <com.houlin.capstone_project.ui.custom.DividerView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/interval_height" />
 
             <include layout="@layout/layout_home_us" />
 
-            <com.houlin.capstone_project.view.ui.custom.DividerView
+            <com.houlin.capstone_project.ui.custom.DividerView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/interval_height" />
 
@@ -64,4 +64,4 @@
 
     </ScrollView>
 
-</com.houlin.capstone_project.view.ui.custom.LoadingFrameLayout>
+</com.houlin.capstone_project.ui.custom.LoadingFrameLayout>

@@ -1,6 +1,6 @@
 package com.houlin.capstone_project.listener;
 
-import com.houlin.capstone_project.model.bean.Top250;
+import com.houlin.capstone_project.data.bean.Top250;
 
 /**
  * Created by houlin on 2017/12/10.
