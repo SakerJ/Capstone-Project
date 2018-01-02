@@ -28,4 +28,10 @@
         <attr name="starCount" format="integer" />
     </declare-styleable>
 
+    <declare-styleable name="FooterWave">
+        <attr name="waveHeight" format="dimension" />
+        <attr name="waveOffset" format="dimension" />
+        <attr name="waveColor" format="color" />
+    </declare-styleable>
+
 </resources>

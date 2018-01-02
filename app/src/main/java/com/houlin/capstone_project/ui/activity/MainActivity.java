@@ -14,7 +14,7 @@ import com.houlin.capstone_project.utils.ToastUtils;
 import com.houlin.capstone_project.home.HomeFragment;
 import com.houlin.capstone_project.hot.HotFragment;
 import com.houlin.capstone_project.top.TopFragment;
-import com.houlin.capstone_project.ui.fragment.UsFragment;
+import com.houlin.capstone_project.us.UsFragment;
 
 import java.util.List;
 

@@ -132,7 +132,7 @@ public class HomePresenter implements HomeContract.Presenter, HotListener, Comin
     // Top250Listener--------------
 
     @Override
-    public void onTopResponse(Top250 top250) {
+    public void onTopResponse(Top250 top250, boolean isRefresh) {
         mHomeView.showTop250(top250);
         getTop = true;
         showContent();

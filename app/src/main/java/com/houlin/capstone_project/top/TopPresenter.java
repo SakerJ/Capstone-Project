@@ -13,6 +13,9 @@ public class TopPresenter implements TopContract.Presenter, Top250Listener {
     private TopContract.Model mModel;
     private TopContract.View mView;
 
+    private final int GET_COUNT = 30;
+    private boolean isLoading;// 避免重复请求数据
+
     public TopPresenter() {
         mModel = new TopModel();
     }
@@ -28,15 +31,22 @@ public class TopPresenter implements TopContract.Presenter, Top250Listener {
     }
 
     @Override
-    public void getData() {
-        mModel.getTop(0, 30, this);
+    public void getData(int start, boolean isRefresh) {
+        if (!isLoading) {
+            isLoading = true;
+            mModel.getTop(start, GET_COUNT, isRefresh, this);
+        }
     }
 
     // Top250Listener----------------------
 
     @Override
-    public void onTopResponse(Top250 top250) {
-        mView.showTop(top250);
+    public void onTopResponse(Top250 top250, boolean isRefresh) {
+        isLoading = false;
+        if (top250.getSubjects().size() < GET_COUNT) {
+            mView.loadFinish();
+        }
+        mView.showTop(top250, isRefresh);
     }
 
     @Override

@@ -75,7 +75,7 @@ public class HomeModel implements HomeContract.Model {
             @Override
             public void onResponse(Call<Top250> call, Response<Top250> response) {
                 Top250 body = response.body();
-                listener.onTopResponse(body);
+                listener.onTopResponse(body, false);
             }
 
             @Override

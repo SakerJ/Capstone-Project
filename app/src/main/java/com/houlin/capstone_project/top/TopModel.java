@@ -15,12 +15,12 @@ import retrofit2.Response;
 public class TopModel implements TopContract.Model {
 
     @Override
-    public void getTop(int start, int count, final Top250Listener listener) {
+    public void getTop(int start, int count, final boolean isRefresh, final Top250Listener listener) {
         ApiClient.service.top250(start, count).enqueue(new Callback<Top250>() {
             @Override
             public void onResponse(Call<Top250> call, Response<Top250> response) {
                 Top250 body = response.body();
-                listener.onTopResponse(body);
+                listener.onTopResponse(body, isRefresh);
             }
 
             @Override

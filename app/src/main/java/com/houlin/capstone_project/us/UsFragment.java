@@ -1,4 +1,4 @@
-package com.houlin.capstone_project.ui.fragment;
+package com.houlin.capstone_project.us;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

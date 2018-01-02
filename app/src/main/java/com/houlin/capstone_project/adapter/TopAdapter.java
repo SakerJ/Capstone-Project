@@ -13,7 +13,6 @@ import com.houlin.capstone_project.R;
 import com.houlin.capstone_project.data.bean.Top250;
 import com.houlin.capstone_project.ui.custom.RatingStar;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -23,9 +22,8 @@ import butterknife.ButterKnife;
  * @author houlin
  */
 
-public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder> {
+public class TopAdapter extends LoadMoreAdapter<Top250.SubjectsBean> {
 
-    private List<Top250.SubjectsBean> mList = new ArrayList<>();
     private Fragment mFragment;
 
     public TopAdapter(Fragment fragment) {
@@ -37,20 +35,15 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder> {
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateNormalHolder(ViewGroup parent, int viewType) {
         View inflate = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_hot, parent, false);
         return new ViewHolder(inflate);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.update(position);
-    }
-
-    @Override
-    public int getItemCount() {
-        return mList.size();
+    public void onBindNormalHolder(RecyclerView.ViewHolder holder, int position) {
+        ((ViewHolder) holder).update(position);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

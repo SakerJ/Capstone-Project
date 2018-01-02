@@ -10,5 +10,7 @@
     <string name="coming_soon">即将上映</string>
     <string name="director">导演</string>
     <string name="cast">主演</string>
+    <string name="loading">正在加载</string>
+    <string name="all_loaded">全部加载完毕</string>
 
 </resources>

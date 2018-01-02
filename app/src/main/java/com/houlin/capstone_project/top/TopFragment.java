@@ -20,6 +20,8 @@ import butterknife.ButterKnife;
 
 public class TopFragment extends BaseFragment implements TopContract.View {
 
+    private static final String TAG = "TopFragment";
+
     @BindView(R.id.rv_show)
     MyRecyclerView mMyRecyclerView;
 
@@ -46,7 +48,7 @@ public class TopFragment extends BaseFragment implements TopContract.View {
         mPresenter = new TopPresenter();
         mPresenter.attach(this);
 
-        mPresenter.getData();
+        mPresenter.getData(mAdapter.getList().size(), false);
     }
 
     @Override
@@ -65,17 +67,35 @@ public class TopFragment extends BaseFragment implements TopContract.View {
         mMyRecyclerView.setRefreshListener(new MyRecyclerView.RefreshListener() {
             @Override
             public void onRefresh() {
-                mPresenter.getData();
+                mPresenter.getData(0, true);
+            }
+        });
+        // 上拉加载
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (!recyclerView.canScrollVertically(1)) {
+                    // 加载更多
+                    mPresenter.getData(mAdapter.getList().size(), false);
+                }
             }
         });
     }
 
     @Override
-    public void showTop(Top250 top250) {
-        mAdapter.getList().clear();
+    public void showTop(Top250 top250, boolean isRefresh) {
+        if (isRefresh) {// 刷新操作才清空数据
+            mAdapter.getList().clear();
+        }
         mAdapter.getList().addAll(top250.getSubjects());
         mAdapter.notifyDataSetChanged();
 
         mMyRecyclerView.refreshComplete();
+    }
+
+    @Override
+    public void loadFinish() {
+        mAdapter.setLoading(false);
     }
 }

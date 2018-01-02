@@ -7,7 +7,6 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
@@ -16,7 +15,7 @@ import android.widget.TextView;
 import com.houlin.capstone_project.R;
 
 /**
- * 带header和footer的RecyclerView
+ * 带header的RecyclerView。而footer在adapter中，因为footer的滚动速度要和列表一致
  *
  * @author houlin
  */
@@ -73,10 +72,6 @@ public class MyRecyclerView extends LinearLayout {
                 super.onScrolled(recyclerView, dx, dy);
                 // 如果RecyclerView滑动到顶部，header便可滑动
                 isHeaderPull = !recyclerView.canScrollVertically(-1);
-                if (!recyclerView.canScrollVertically(1)) {
-                    MarginLayoutParams params = (MarginLayoutParams) recyclerView.getLayoutParams();
-                    Log.d(TAG, "onScrolled: " + params.topMargin);
-                }
             }
         });
     }
@@ -86,7 +81,7 @@ public class MyRecyclerView extends LinearLayout {
                 .inflate(R.layout.layout_recyclerview, this, true);
         mRecyclerView = findViewById(R.id.rv_recycler);
         mHeader = findViewById(R.id.header_recycler);
-        mTextView = findViewById(R.id.tv_text);
+        mTextView = findViewById(R.id.tv_header_text);
     }
 
     @Override

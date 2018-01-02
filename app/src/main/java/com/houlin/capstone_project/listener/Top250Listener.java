@@ -7,7 +7,7 @@ import com.houlin.capstone_project.data.bean.Top250;
  */
 
 public interface Top250Listener {
-    void onTopResponse(Top250 top250);
+    void onTopResponse(Top250 top250, boolean isRefresh);
 
     void onTopFailure();
 }
