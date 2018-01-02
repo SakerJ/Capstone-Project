@@ -17,6 +17,7 @@ public interface UsContract {
 
     interface View extends BaseView {
         void showUs(UsBox usBox);
+        void showContent();
     }
 
     interface Presenter extends BasePresenter {

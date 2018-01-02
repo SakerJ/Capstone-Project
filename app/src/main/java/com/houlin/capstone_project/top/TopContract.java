@@ -19,6 +19,8 @@ public interface TopContract {
         void showTop(Top250 top250, boolean isRefresh);
 
         void loadFinish();
+
+        void showContent();
     }
 
     interface Presenter extends BasePresenter {

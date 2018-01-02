@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RatingStar">
+        <attr name="starRadius" format="dimension" />
+        <attr name="starDividerWidth" format="dimension" />
+        <attr name="starCount" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="FooterWave">
+        <attr name="waveHeight" format="dimension" />
+        <attr name="waveOffset" format="dimension" />
+        <attr name="waveColor" format="color" />
+    </declare-styleable>
+
+</resources>

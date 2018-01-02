@@ -47,6 +47,7 @@ public class TopPresenter implements TopContract.Presenter, Top250Listener {
             mView.loadFinish();
         }
         mView.showTop(top250, isRefresh);
+        mView.showContent();
     }
 
     @Override

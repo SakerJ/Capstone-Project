@@ -20,6 +20,8 @@ public interface HotContract {
 
     interface View extends BaseView {
         void showHot(InTheaters inTheaters);
+
+        void showContent();
     }
 
     interface Presenter extends BasePresenter {

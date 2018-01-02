@@ -37,6 +37,7 @@ public class UsPresenter implements UsContract.Presenter, UsBoxListener {
     @Override
     public void onUsResponse(UsBox body) {
         mView.showUs(body);
+        mView.showContent();
     }
 
     @Override

@@ -12,6 +12,7 @@ import com.houlin.capstone_project.BaseFragment;
 import com.houlin.capstone_project.R;
 import com.houlin.capstone_project.adapter.TopAdapter;
 import com.houlin.capstone_project.data.bean.Top250;
+import com.houlin.capstone_project.ui.custom.LoadingFrameLayout;
 import com.houlin.capstone_project.ui.custom.MyRecyclerView;
 import com.houlin.capstone_project.utils.RecyclerUtils;
 
@@ -24,6 +25,8 @@ public class TopFragment extends BaseFragment implements TopContract.View {
 
     @BindView(R.id.rv_show)
     MyRecyclerView mMyRecyclerView;
+    @BindView(R.id.loading)
+    LoadingFrameLayout mLoadingFrameLayout;
 
     private RecyclerView mRecyclerView;
     private TopContract.Presenter mPresenter;
@@ -49,6 +52,7 @@ public class TopFragment extends BaseFragment implements TopContract.View {
         mPresenter.attach(this);
 
         mPresenter.getData(mAdapter.getList().size(), false);
+        mLoadingFrameLayout.showLoading();
     }
 
     @Override
@@ -97,5 +101,10 @@ public class TopFragment extends BaseFragment implements TopContract.View {
     @Override
     public void loadFinish() {
         mAdapter.setLoading(false);
+    }
+
+    @Override
+    public void showContent() {
+        mLoadingFrameLayout.showContent();
     }
 }

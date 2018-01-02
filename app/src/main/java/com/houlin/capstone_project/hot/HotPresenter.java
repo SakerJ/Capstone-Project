@@ -37,6 +37,7 @@ public class HotPresenter implements HotContract.Presenter, HotListener {
     @Override
     public void onResponse(InTheaters body) {
         mHotView.showHot(body);
+        mHotView.showContent();
     }
 
     @Override

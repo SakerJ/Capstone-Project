@@ -12,6 +12,7 @@ import com.houlin.capstone_project.BaseFragment;
 import com.houlin.capstone_project.R;
 import com.houlin.capstone_project.adapter.HotAdapter;
 import com.houlin.capstone_project.data.bean.InTheaters;
+import com.houlin.capstone_project.ui.custom.LoadingFrameLayout;
 import com.houlin.capstone_project.ui.custom.MyRecyclerView;
 import com.houlin.capstone_project.utils.RecyclerUtils;
 
@@ -22,6 +23,8 @@ public class HotFragment extends BaseFragment implements HotContract.View {
 
     @BindView(R.id.rv_show)
     MyRecyclerView mMyRecyclerView;
+    @BindView(R.id.loading)
+    LoadingFrameLayout mLoadingFrameLayout;
 
     private RecyclerView mRecyclerView;
     private HotAdapter mHotAdapter;
@@ -47,6 +50,7 @@ public class HotFragment extends BaseFragment implements HotContract.View {
         mHotPresenter.attach(this);
 
         mHotPresenter.getData();
+        mLoadingFrameLayout.showLoading();
     }
 
     @Override
@@ -77,5 +81,10 @@ public class HotFragment extends BaseFragment implements HotContract.View {
         mHotAdapter.notifyDataSetChanged();
 
         mMyRecyclerView.refreshComplete();
+    }
+
+    @Override
+    public void showContent() {
+        mLoadingFrameLayout.showContent();
     }
 }

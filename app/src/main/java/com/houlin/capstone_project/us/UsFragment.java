@@ -12,6 +12,7 @@ import com.houlin.capstone_project.BaseFragment;
 import com.houlin.capstone_project.R;
 import com.houlin.capstone_project.adapter.UsAdapter;
 import com.houlin.capstone_project.data.bean.UsBox;
+import com.houlin.capstone_project.ui.custom.LoadingFrameLayout;
 import com.houlin.capstone_project.ui.custom.MyRecyclerView;
 import com.houlin.capstone_project.utils.RecyclerUtils;
 
@@ -24,6 +25,8 @@ public class UsFragment extends BaseFragment implements UsContract.View {
 
     @BindView(R.id.rv_show)
     MyRecyclerView mMyRecyclerView;
+    @BindView(R.id.loading)
+    LoadingFrameLayout mLoadingFrameLayout;
 
     private RecyclerView mRecyclerView;
     private UsContract.Presenter mUsPresenter;
@@ -49,6 +52,7 @@ public class UsFragment extends BaseFragment implements UsContract.View {
         mUsPresenter.attach(this);
 
         mUsPresenter.getData();
+        mLoadingFrameLayout.showLoading();
     }
 
     @Override
@@ -79,5 +83,10 @@ public class UsFragment extends BaseFragment implements UsContract.View {
         mUsAdapter.notifyDataSetChanged();
 
         mMyRecyclerView.refreshComplete();
+    }
+
+    @Override
+    public void showContent() {
+        mLoadingFrameLayout.showContent();
     }
 }
