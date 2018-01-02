@@ -10,7 +10,7 @@ import com.houlin.capstone_project.data.bean.InTheaters;
 
 public class HotPresenter implements HotContract.Presenter, HotListener {
 
-    private HotModel mHotModel;
+    private HotContract.Model mHotModel;
     private HotContract.View mHotView;
 
     public HotPresenter() {
