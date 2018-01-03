@@ -48,9 +48,6 @@ public class HotFragment extends BaseFragment implements HotContract.View {
         init();
         mHotPresenter = new HotPresenter();
         mHotPresenter.attach(this);
-
-        mHotPresenter.getData();
-        mLoadingFrameLayout.showLoading();
     }
 
     @Override
@@ -86,5 +83,11 @@ public class HotFragment extends BaseFragment implements HotContract.View {
     @Override
     public void showContent() {
         mLoadingFrameLayout.showContent();
+    }
+
+    @Override
+    protected void initData() {
+        mHotPresenter.getData();
+        mLoadingFrameLayout.showLoading();
     }
 }

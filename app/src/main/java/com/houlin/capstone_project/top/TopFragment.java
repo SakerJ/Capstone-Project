@@ -50,9 +50,6 @@ public class TopFragment extends BaseFragment implements TopContract.View {
         init();
         mPresenter = new TopPresenter();
         mPresenter.attach(this);
-
-        mPresenter.getData(mAdapter.getList().size(), false);
-        mLoadingFrameLayout.showLoading();
     }
 
     @Override
@@ -106,5 +103,11 @@ public class TopFragment extends BaseFragment implements TopContract.View {
     @Override
     public void showContent() {
         mLoadingFrameLayout.showContent();
+    }
+
+    @Override
+    protected void initData() {
+        mPresenter.getData(mAdapter.getList().size(), false);
+        mLoadingFrameLayout.showLoading();
     }
 }

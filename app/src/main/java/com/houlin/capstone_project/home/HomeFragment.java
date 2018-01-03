@@ -82,9 +82,6 @@ public class HomeFragment extends BaseFragment implements HomeContract.View {
         init();
         mPresenter = new HomePresenter();
         mPresenter.attach(this);
-
-        mPresenter.getData();
-        mLoadingFrameLayout.showLoading();
     }
 
     private void init() {
@@ -261,4 +258,9 @@ public class HomeFragment extends BaseFragment implements HomeContract.View {
         mLoadingFrameLayout.showContent();
     }
 
+    @Override
+    protected void initData() {
+        mPresenter.getData();
+        mLoadingFrameLayout.showLoading();
+    }
 }

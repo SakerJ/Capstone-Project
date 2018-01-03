@@ -50,9 +50,6 @@ public class UsFragment extends BaseFragment implements UsContract.View {
         init();
         mUsPresenter = new UsPresenter();
         mUsPresenter.attach(this);
-
-        mUsPresenter.getData();
-        mLoadingFrameLayout.showLoading();
     }
 
     @Override
@@ -88,5 +85,11 @@ public class UsFragment extends BaseFragment implements UsContract.View {
     @Override
     public void showContent() {
         mLoadingFrameLayout.showContent();
+    }
+
+    @Override
+    protected void initData() {
+        mUsPresenter.getData();
+        mLoadingFrameLayout.showLoading();
     }
 }
