@@ -34,10 +34,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.houlin.capstone_project.utils.RecyclerUtils.SpaceItemDecoration.RECYCLERVIEW_SPACE;
+
 public class HomeFragment extends BaseFragment implements HomeContract.View {
 
     private static final String TAG = "HomeFragment";
-    private final int RECYCLERVIEW_SPACE = 10;// RecyclerView间距dp
     private final int BANNER_TIME = 3000;// banner轮播间隔
 
     @BindView(R.id.rv_hot)

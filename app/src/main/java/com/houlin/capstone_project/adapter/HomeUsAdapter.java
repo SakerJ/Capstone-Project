@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.houlin.capstone_project.R;
 import com.houlin.capstone_project.data.bean.UsBox;
+import com.houlin.capstone_project.detail.DetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +73,7 @@ public class HomeUsAdapter extends RecyclerView.Adapter<HomeUsAdapter.ViewHolder
 
         public void update(int position) {
             UsBox.SubjectsBean bean = mList.get(position);
-            UsBox.SubjectsBean.SubjectBean subject = bean.getSubject();
+            final UsBox.SubjectsBean.SubjectBean subject = bean.getSubject();
             Glide.with(mFragment).load(subject.getImages().getSmall())
                     .placeholder(R.drawable.place_holder).dontAnimate().into(mImageView);
             mTvTitle.setText(subject.getTitle());
@@ -81,6 +82,12 @@ public class HomeUsAdapter extends RecyclerView.Adapter<HomeUsAdapter.ViewHolder
                 mTextView = (TextView) viewStub.inflate();
             }
             mTextView.setText(bean.getBox() / 10000 + "万票房");
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DetailActivity.startDetail(itemView.getContext(), subject.getId());
+                }
+            });
         }
     }
 }

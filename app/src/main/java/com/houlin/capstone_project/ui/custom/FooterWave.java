@@ -14,8 +14,9 @@ import android.view.animation.LinearInterpolator;
 import com.houlin.capstone_project.R;
 
 /**
- * 向左偏移一个屏幕的宽度，开始画波浪，相当于两个屏幕的波浪
- * 动画重复向右移动，距离为屏幕的宽度。即可出现波浪效果
+ * 向左偏移一个屏幕的宽度，开始画贝塞尔曲线，相当于画两个屏幕的波浪。波浪动画的两种实现：
+ * 1. canvas重复向右移动，距离为屏幕的宽度（此类使用该方法）
+ * 2. 贝塞尔曲线的关键点向右移动
  *
  * @author houlin
  */

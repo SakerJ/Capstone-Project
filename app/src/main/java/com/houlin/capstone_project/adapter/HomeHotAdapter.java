@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.houlin.capstone_project.R;
 import com.houlin.capstone_project.data.bean.InTheaters;
+import com.houlin.capstone_project.detail.DetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +71,7 @@ public class HomeHotAdapter extends RecyclerView.Adapter<HomeHotAdapter.ViewHold
         }
 
         void update(int position) {
-            InTheaters.SubjectsBean bean = mList.get(position);
+            final InTheaters.SubjectsBean bean = mList.get(position);
             Glide.with(mFragment).load(bean.getImages().getSmall())
                     .placeholder(R.drawable.place_holder).dontAnimate().into(mImageView);
 
@@ -80,6 +81,12 @@ public class HomeHotAdapter extends RecyclerView.Adapter<HomeHotAdapter.ViewHold
             }
             mTextView.setText(bean.getCollect_count() + "人看过");
             mTvTitle.setText(bean.getTitle());
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DetailActivity.startDetail(itemView.getContext(), bean.getId());
+                }
+            });
         }
     }
 }

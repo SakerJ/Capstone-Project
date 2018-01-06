@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.houlin.capstone_project.R;
 import com.houlin.capstone_project.data.bean.Top250;
+import com.houlin.capstone_project.detail.DetailActivity;
 import com.houlin.capstone_project.ui.custom.RatingStar;
 
 import java.util.List;
@@ -67,7 +68,7 @@ public class TopAdapter extends LoadMoreAdapter<Top250.SubjectsBean> {
         }
 
         void update(int position) {
-            Top250.SubjectsBean subjectsBean = mList.get(position);
+            final Top250.SubjectsBean subjectsBean = mList.get(position);
             Glide.with(mFragment).load(subjectsBean.getImages().getSmall())
                     .placeholder(R.drawable.place_holder).dontAnimate().into(mImageView);
             mTvTitle.setText(subjectsBean.getTitle());
@@ -93,6 +94,12 @@ public class TopAdapter extends LoadMoreAdapter<Top250.SubjectsBean> {
                 cast.append(bean.getName());
             }
             mTvCast.setText(cast);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DetailActivity.startDetail(itemView.getContext(), subjectsBean.getId());
+                }
+            });
         }
     }
 }

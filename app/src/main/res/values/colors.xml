@@ -3,8 +3,10 @@
     <!--<color name="colorPrimary">#3F51B5</color>-->
     <!--<color name="colorPrimaryDark">#303F9F</color>-->
     <!--<color name="colorAccent">#FF4081</color>-->
+
     <color name="colorPrimary">#66bb6a</color>
-    <color name="colorPrimaryDark">#338a3e</color>
+    <!--<color name="colorPrimaryDark">#338a3e</color>-->
+    <color name="colorPrimaryDark">@color/colorPrimary</color>
     <color name="colorPrimaryLight">#98ee99</color>
     <color name="colorAccent">#ffab00</color>
 
@@ -14,4 +16,6 @@
     <color name="black_20">#202020</color>
     <color name="item_text">#f8ae30</color>
     <color name="divider">#f4f4f4</color>
+    <color name="white">#fff</color>
+    <color name="black_translucent">#8000</color>
 </resources>

@@ -5,6 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.houlin.capstone_project.detail.DetailActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,12 +34,18 @@ public class HomePagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(final ViewGroup container, int position) {
 //        return super.instantiateItem(container, position);
         position %= mList.size();// 防止无限轮播导致list越界
         ImageView imageView = new ImageView(container.getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         imageView.setImageResource(mList.get(position));
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DetailActivity.startDetail(container.getContext(), "26662193");
+            }
+        });
         container.addView(imageView);
         return imageView;
     }

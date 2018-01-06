@@ -4,17 +4,17 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.houlin.capstone_project.BaseActivity;
 import com.houlin.capstone_project.R;
-import com.houlin.capstone_project.utils.ToastUtils;
 import com.houlin.capstone_project.home.HomeFragment;
 import com.houlin.capstone_project.hot.HotFragment;
 import com.houlin.capstone_project.top.TopFragment;
 import com.houlin.capstone_project.us.UsFragment;
+import com.houlin.capstone_project.utils.ToastUtils;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.rb_home)
     RadioButton mRbHome;

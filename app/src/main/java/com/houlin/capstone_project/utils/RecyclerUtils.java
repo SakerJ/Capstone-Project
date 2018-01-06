@@ -16,6 +16,7 @@ public class RecyclerUtils {
 
     public static class SpaceItemDecoration extends RecyclerView.ItemDecoration {
 
+        public static final int RECYCLERVIEW_SPACE = 10;
         private int mSpace;
 
         public SpaceItemDecoration(int space) {

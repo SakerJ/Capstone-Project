@@ -90,7 +90,8 @@ public class LoadingView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        // 完全自己计算尺寸，不调用super.onMeasure
+//        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         // 宽
         int mode = MeasureSpec.getMode(widthMeasureSpec);
