@@ -22,7 +22,7 @@
                 android:id="@+id/iv_back"
                 android:layout_width="@dimen/label_height"
                 android:layout_height="@dimen/label_height"
-                android:contentDescription="返回"
+                android:contentDescription="@string/back"
                 android:padding="15dp"
                 android:src="@drawable/ic_back" />
 
@@ -33,7 +33,6 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
-                android:text="前任3：再见前任"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_20" />
 
@@ -84,7 +83,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="140dp"
                     android:layout_toRightOf="@id/iv_image"
-                    android:text="前任3：再见前任"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_20" />
 
@@ -95,7 +93,6 @@
                     android:layout_below="@id/tv_title"
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@id/iv_image"
-                    android:text="喜剧 爱情"
                     android:textColor="@color/gray_d4" />
 
                 <TextView
@@ -105,7 +102,6 @@
                     android:layout_below="@id/tv_type"
                     android:layout_marginTop="5dp"
                     android:layout_toRightOf="@id/iv_image"
-                    android:text="2017年上映"
                     android:textColor="@color/gray_d4" />
 
                 <com.houlin.capstone_project.ui.custom.RatingStar
@@ -124,7 +120,6 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="4dp"
                     android:layout_toRightOf="@id/rs_rating"
-                    android:text="9.2"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/text_16" />
 
@@ -135,7 +130,6 @@
                     android:layout_below="@id/rs_rating"
                     android:layout_marginTop="5dp"
                     android:layout_toRightOf="@id/iv_image"
-                    android:text="33.7万人评分"
                     android:textColor="@color/gray_d4"
                     android:textSize="@dimen/text_12" />
 
@@ -150,7 +144,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/public_padding"
-                android:text="一对好基友孟云（韩庚 饰）和余飞（郑恺 饰）跟女友都因为一点小事宣告分手，并且“拒绝挽回，死不认错”。两人在夜店、派对与交友软件上放飞人生第二春，大肆庆祝“黄金单身期”，从而引发了一系列好笑的故事。孟云与女友同甘共苦却难逃“五年之痒”，余飞与女友则棋逢敌手相爱相杀无绝期。然而现实的“打脸”却来得猝不及防：一对推拉纠结零往来，一对纠缠互怼全交代。两对恋人都将面对最终的选择：是再次相见？还是再也不见？"
                 android:textColor="@color/black_20" />
 
             <com.houlin.capstone_project.ui.custom.DividerView

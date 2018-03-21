@@ -19,7 +19,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_toRightOf="@id/iv_image"
-        android:text="芳华"
         android:textColor="@color/black_20"
         android:textSize="18sp" />
 
@@ -39,7 +38,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="6dp"
         android:layout_toRightOf="@id/rs_rating"
-        android:text="9.9"
         android:textColor="@color/gray_9a"
         android:textSize="@dimen/text_12" />
 
