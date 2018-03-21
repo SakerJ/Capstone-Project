@@ -16,6 +16,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    signingConfigs {
+        debug {
+            storeFile file('../capstone_project.jks')//签名文件路径
+            storePassword "12345678"
+            keyAlias "capstone_project"
+            keyPassword "12345678"  //签名密码
+            println("====== signingConfigs.debug ======")
+        }
+        release {
+            storeFile file('../capstone_project.jks')//签名文件路径
+            storePassword "12345678"
+            keyAlias "capstone_project"
+            keyPassword "12345678"  //签名密码
+            println("====== signingConfigs.release ======")
+        }
+    }
 }
 
 dependencies {
