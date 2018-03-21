@@ -1,5 +1,6 @@
 package com.houlin.capstone_project.utils;
 
+import android.content.Context;
 import android.widget.Toast;
 
 import com.houlin.capstone_project.MyApplication;
@@ -12,31 +13,32 @@ public class ToastUtils {
 
     private static Toast toast;
 
+    private ToastUtils() {
+    }
+
+    public static void init(Context context) {
+        toast = Toast.makeText(context, "", Toast.LENGTH_SHORT);
+    }
+
     public static void showToast(final String text, final int duration) {
+        if (toast == null) return;
         MyApplication.getHandler().post(new Runnable() {
             @Override
             public void run() {
-                if (toast == null) {
-                    toast = Toast.makeText(MyApplication.getContext(), text, duration);
-                } else {
-                    toast.setText(text);
-                    toast.setDuration(duration);
-                }
+                toast.setText(text);
+                toast.setDuration(duration);
                 toast.show();
             }
         });
     }
 
     public static void showToast(final int resId, final int duration) {
+        if (toast == null) return;
         MyApplication.getHandler().post(new Runnable() {
             @Override
             public void run() {
-                if (toast == null) {
-                    toast = Toast.makeText(MyApplication.getContext(), resId, duration);
-                } else {
-                    toast.setText(resId);
-                    toast.setDuration(duration);
-                }
+                toast.setText(resId);
+                toast.setDuration(duration);
                 toast.show();
             }
         });

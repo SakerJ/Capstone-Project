@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 import com.google.android.gms.ads.MobileAds;
+import com.houlin.capstone_project.utils.ToastUtils;
 
 /**
  * @author houlin
@@ -13,19 +14,14 @@ import com.google.android.gms.ads.MobileAds;
 
 public class MyApplication extends Application {
 
-    private static Context context;
     private static Handler handler = new Handler();
 
     @Override
     public void onCreate() {
         super.onCreate();
-        context = getApplicationContext();
         // 初始化admob
-        MobileAds.initialize(context, "ca-app-pub-6273206636756153~6226484935");
-    }
-
-    public static Context getContext() {
-        return context;
+        MobileAds.initialize(this, "ca-app-pub-6273206636756153~6226484935");
+        ToastUtils.init(this);
     }
 
     public static Handler getHandler() {
