@@ -18,7 +18,7 @@ public abstract class BaseFragment extends Fragment {
     private boolean isInitData;
     private boolean isVisible;
 
-    // 与ViewPager配合时的懒加载(1
+    // 与ViewPager配合时的懒加载(part1
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
@@ -26,7 +26,7 @@ public abstract class BaseFragment extends Fragment {
         isVisible = isVisibleToUser;
     }
 
-    // 与ViewPager配合时的懒加载(2
+    // 与ViewPager配合时的懒加载(part2
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         Log.d(TAG, "onViewCreated: ");
