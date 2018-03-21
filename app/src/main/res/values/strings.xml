@@ -14,5 +14,6 @@
     <string name="all_loaded">全部加载完毕</string>
     <string name="casts">演职人员</string>
     <string name="all">全部</string>
+    <string name="detail">详情</string>
 
 </resources>

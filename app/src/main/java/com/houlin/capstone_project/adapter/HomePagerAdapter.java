@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.houlin.capstone_project.R;
 import com.houlin.capstone_project.detail.DetailActivity;
 
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ public class HomePagerAdapter extends PagerAdapter {
         ImageView imageView = new ImageView(container.getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         imageView.setImageResource(mList.get(position));
+        imageView.setContentDescription(container.getContext().getString(R.string.detail));
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
