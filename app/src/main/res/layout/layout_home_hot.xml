@@ -19,19 +19,17 @@
             android:textSize="@dimen/text_16"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/arrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/arrow" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/arrow_margin"
             android:layout_marginRight="@dimen/arrow_margin"
-            android:layout_toLeftOf="@id/arrow"
+            android:drawableEnd="@drawable/arrow"
+            android:drawablePadding="@dimen/arrow_margin"
+            android:drawableRight="@drawable/arrow"
             android:gravity="center"
             android:text="@string/more"
             android:textColor="@color/gray_5c"
